@@ -33,10 +33,21 @@ public class NewController {
             user.setLastName("blanch");
             users.save(user);
         }
+
+        int counter = 0;
+        while (counter < 10) {
+            User myUser = users.findFirstByEmail("brice@blanch.com");
+            Event myEvent = new Event("title" + counter, "address" + counter, "description" + counter, myUser, "date" + counter, "time" + counter);
+            events.save(myEvent);
+            counter++;
+        }
+
     }
+
     @RequestMapping(path = "/", method = RequestMethod.GET)
     public String home(Model model, HttpSession session) {
         System.out.println("hanging out in home");
+
         return "home";
     }
 }
