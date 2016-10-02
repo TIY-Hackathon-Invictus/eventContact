@@ -32,6 +32,22 @@ public class NewController {
             user.setFirstName("brice");
             user.setLastName("blanch");
             users.save(user);
+
+            User myUser = new User();
+            user.email = "sharifa@chini.com";
+            user.password = "hello";
+            user.setAdmin(true);
+            user.setFirstName("sharifa");
+            user.setLastName("chin");
+            users.save(myUser);
+
+            User myUser1 = new User();
+            user.email = "princess@sampson.io";
+            user.password = "p@ssword";
+            user.setAdmin(true);
+            user.setFirstName("princess");
+            user.setLastName("sampson");
+            users.save(myUser1);
         }
 
         int counter = 0;

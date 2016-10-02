@@ -91,8 +91,6 @@ public class JSONController {
         return getAllEvents();
     }
 
-
-
 //    @RequestMapping(path = "/contacts", method = RequestMethod.POST)
 //    public ArrayList<ContactRequest> contacts(@RequestBody ReqContacts rc) {
 //        ArrayList<ContactRequest> requestListThatAreTrue = new ArrayList<ContactRequest>();

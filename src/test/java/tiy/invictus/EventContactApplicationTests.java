@@ -3,6 +3,7 @@ package tiy.invictus;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionMessage;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -80,6 +81,7 @@ public class EventContactApplicationTests {
         for (Event currentEvent : allEvents) {
             eventArrayList.add(currentEvent);
         }
+
         for (Event thisEvent : eventArrayList) {
             System.out.println(thisEvent.eventId);
             System.out.println(thisEvent.adminUser);
@@ -90,6 +92,34 @@ public class EventContactApplicationTests {
             System.out.println();
             events.delete(thisEvent.getEventId());
         }
+    }
+
+    @Test
+    public void findByAdmin() throws Exception {
+        User myUser = users.findFirstByEmail("brice@blanch.com");
+        Event myEvent1 = new Event("title1", "address", "description", myUser, "date", "time");
+        User myUser1 = users.findFirstByEmail("princess@sampson.io");
+        Event myEvent2 = new Event("title2", "address" , "description", myUser1, "date", "time");
+
+        events.save(myEvent1);
+        events.save(myEvent2);
+
+//        Iterable<Event> allEvents = events.findFirstByUser(myUser);
+//        ArrayList<Event> eventArrayList = new ArrayList<>();
+//
+//        for (Event currentEvent : allEvents) {
+//            eventArrayList.add(currentEvent);
+//        }
+//        for (Event thisEvent : eventArrayList) {
+//            System.out.println(thisEvent.eventId);
+//            System.out.println(thisEvent.adminUser);
+//            System.out.println(thisEvent.title);
+//            System.out.println(thisEvent.address);
+//            System.out.println(thisEvent.date);
+//            System.out.println(thisEvent.time);
+//            System.out.println();
+//            events.delete(thisEvent.getEventId());
+//        }
     }
 
 
