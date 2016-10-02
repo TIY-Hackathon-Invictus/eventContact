@@ -54,7 +54,7 @@ public class JSONController {
             return new ResponseError("User already exists.");
         }
         else  {
-            users.save(user);
+            compareUser = users.save(user);
             secureUser = new SecureUser(compareUser.getUserId(), compareUser.getFirstName(), compareUser.getLastName(), compareUser.getEmail(), compareUser.isAdmin());
         }
         return secureUser;

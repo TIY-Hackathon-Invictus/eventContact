@@ -42,6 +42,9 @@ public class Event {
         this.time = time;
     }
 
+    public Event() {
+    }
+
     public int getEventId() {
         return eventId;
     }
