@@ -37,9 +37,7 @@ public class JSONController {
             myResponse.setMessage("User does not exist.");
             return myResponse;
 //            return new ResponseError("User does not exist.");
-        }
-
-        if (!loginRequest.getPassword().equals(userAsUser.getPassword())) {
+        } else if (!loginRequest.getPassword().equals(userAsUser.getPassword())) {
             return new ResponseError("Incorrect Username/Password.");
         }
 
