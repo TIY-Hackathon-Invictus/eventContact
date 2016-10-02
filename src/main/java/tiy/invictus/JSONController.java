@@ -27,16 +27,16 @@ public class JSONController {
     @Autowired
     CheckedInRepository checkedInRepos;
 
-
-
     @RequestMapping(path = "/login", method = RequestMethod.POST)
     public Response login(@RequestBody ReqLoginRequest loginRequest) throws Exception {
         Response myUser = users.findFirstByEmail(loginRequest.getEmail());
         User userAsUser = (User) myUser;
-        System.out.println("This is the email and password " + userAsUser.email + " " + userAsUser.password);
 
         if (userAsUser == null) {
-            return new ResponseError("User does not exist.");
+            ResponseError myResponse = new ResponseError();
+            myResponse.setMessage("User does not exist.");
+            return myResponse;
+//            return new ResponseError("User does not exist.");
         }
 
         if (!loginRequest.getPassword().equals(userAsUser.getPassword())) {
@@ -123,14 +123,6 @@ public class JSONController {
         Iterable<ContactRequest> allContacts = contacts.findAll();
         for (ContactRequest contactRequest : allContacts) {
             contactRequestsList.add(contactRequest);
-        }
-        try{
-            //   System.out.println("Catching a nap");
-            //   Thread.sleep(3000);
-            //   System.out.println("Power nap");
-        }catch(Exception e)
-        {
-            e.printStackTrace();
         }
         return contactRequestsList;
     }

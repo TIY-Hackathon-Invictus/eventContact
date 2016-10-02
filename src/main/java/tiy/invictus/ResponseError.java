@@ -5,18 +5,21 @@ package tiy.invictus;
  */
 public class ResponseError implements Response{
 
-    public String message;
+    public String errorMessage;
 
     public ResponseError(String message) {
-        this.message = message;
+        this.errorMessage = message;
+    }
+
+    public ResponseError() {
     }
 
     public String getMessage() {
-        return message;
+        return errorMessage;
     }
 
     public void setMessage(String message) {
-        this.message = message;
+        this.errorMessage = message;
     }
 
 
