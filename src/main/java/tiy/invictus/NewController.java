@@ -34,19 +34,19 @@ public class NewController {
             users.save(user);
 
             User myUser = new User();
-            user.email = "sharifa@chini.com";
-            user.password = "hello";
-            user.setAdmin(true);
-            user.setFirstName("sharifa");
-            user.setLastName("chin");
+            myUser.email = "sharifa@chini.com";
+            myUser.password = "hello";
+            myUser.setAdmin(true);
+            myUser.setFirstName("sharifa");
+            myUser.setLastName("chin");
             users.save(myUser);
 
             User myUser1 = new User();
-            user.email = "princess@sampson.io";
-            user.password = "p@ssword";
-            user.setAdmin(true);
-            user.setFirstName("princess");
-            user.setLastName("sampson");
+            myUser1.email = "princess@sampson.io";
+            myUser1.password = "p@ssword";
+            myUser1.setAdmin(true);
+            myUser1.setFirstName("princess");
+            myUser1.setLastName("sampson");
             users.save(myUser1);
         }
 
