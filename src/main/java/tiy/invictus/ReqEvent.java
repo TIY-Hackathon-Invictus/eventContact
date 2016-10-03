@@ -40,6 +40,9 @@ public class ReqEvent {
         this.time = time;
     }
 
+    public ReqEvent() {
+    }
+
     public int getEventid() {
         return eventId;
     }

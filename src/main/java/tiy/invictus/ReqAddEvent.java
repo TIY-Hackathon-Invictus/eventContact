@@ -16,6 +16,10 @@ public class ReqAddEvent {
         this.event = event;
     }
 
+    public ReqAddEvent(Event event) {
+        this.event = event;
+    }
+
     public int getUserId() {
         return userId;
     }

@@ -11,6 +11,9 @@ public class ReqEventInfo {
         this.eventId = eventId;
     }
 
+    public ReqEventInfo() {
+    }
+
     public int getEventId() {
         return eventId;
     }
